@@ -1,0 +1,26 @@
+{
+    "id": "FD6B0873",
+    "path": "~/ESIEE/E4_V2/R/projet/sncf_project/R/covid.R",
+    "project_path": "R/covid.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1748195006740.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "27,17",
+        "scrollLine": "7"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1748197785,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1748197785604,
+    "read_only": false,
+    "read_only_alternatives": []
+}
