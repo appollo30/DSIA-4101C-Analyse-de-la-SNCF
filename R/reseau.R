@@ -68,9 +68,6 @@ generate_reseau_map <- function(shapes_speeds, gares_communes) {
       opacity = 1
     )
   
-  
-  
-  
   fig
 }
 
@@ -84,6 +81,7 @@ generate_reseau_piechart <- function(gares_communes) {
     count(nom_region, name = "Nombre_de_gares_a_fort_trafic")%>%
     na.omit() 
   
+  # Solution inspirée de https://r-graph-gallery.com/piechart-ggplot2.html
   ggplot(region_counts, aes(x = "", y = Nombre_de_gares_a_fort_trafic, fill = nom_region)) +
     geom_col(color = "white") +
     coord_polar(theta = "y") +

@@ -9,6 +9,7 @@ server <- function(input,output){
   })
   
   output$reseau_map <- renderLeaflet({
+    # On filtre la vitesse en fonction de l'input des boutons radio
     if (input$reseau_radio == "Lignes à faible vitesse (< 100 km/h)"){
       shapes_speeds_filtered <- shapes_speeds %>%
         filter(v_max < 100)
@@ -28,6 +29,7 @@ server <- function(input,output){
   output$reseau_scatterplot <- renderPlot(generate_reseau_scatterplot(gares_communes))
   
   output$covid_line_plot <- renderPlot(
+    # Selon si la checkbox est cochée, l'argument with_idf est passé ou non à la fonction.
     generate_covid_line_plot(gares_communes,with_idf = input$checkbox_idf)
   )
   

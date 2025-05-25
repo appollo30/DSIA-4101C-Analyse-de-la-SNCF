@@ -51,6 +51,7 @@ ui <- fluidPage(
   
   HTML("Ce graphique montre l'évolution du nombre total de voyageurs par région pour chaque année entre 2015 et 2023."),
   
+  # Affichage du line plot
   checkboxInput("checkbox_idf", "Inclure l'Île de France ?", value = FALSE),
   
   plotOutput(outputId="covid_line_plot"),
@@ -62,6 +63,7 @@ ui <- fluidPage(
         On peut chercher à voir quelles sont les régions les plus impactées par la pandémie. Ce graphique montre la part des voyageurs perdus entre 2019 et 2020 par région en points de pourcentage.
   "),
   
+  # Affichage du bar chart
   plotOutput(outputId="covid_bar_chart"),
   
   HTML("
