@@ -26,6 +26,7 @@ ui <- fluidPage(
   "),
 
   # Affichage de la carte
+  radioButtons(inputId="reseau_radio","Partie du réseau à analyser :", c("Lignes à faible vitesse (< 100 km/h)", "Lignes à grande vitesse (>= 100 km/h)", "Réseau complet"), "Lignes à grande vitesse (>= 100 km/h)"),
   leafletOutput("reseau_map"),
 
   HTML("

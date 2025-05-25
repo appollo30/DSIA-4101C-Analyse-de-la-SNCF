@@ -16,7 +16,7 @@ generate_reseau_histogram <- function(shapes_speeds) {
 generate_reseau_map <- function(shapes_speeds, gares_communes) {
   # On ajoute les gares
   gares_les_plus_frequentees_2023 <- gares_communes %>%
-    filter(Total.Voyageurs > 5000000 & Année == 2023 & nom_region != "Île-de-France")
+    filter(Total.Voyageurs > 5000000, Année == 2023, nom_region != "Île-de-France")
   # On ne prend que les gares dont la fréquentation était supérieure à 5 millions de voyageurs en 2023.
   # Pour plus de clareté, on enlève les gares hors de l'île de France
   
@@ -34,7 +34,7 @@ generate_reseau_map <- function(shapes_speeds, gares_communes) {
   # Palette de couleurs pour les tronçons
   pal <- colorNumeric(
     palette = "viridis",  
-    domain = shapes_speeds$v_max
+    domain = c(20,350) # Il s'agit de la plage des vitesses possibles
   )
   
   # On crée la carte de base

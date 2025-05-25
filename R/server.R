@@ -9,7 +9,18 @@ server <- function(input,output){
   })
   
   output$reseau_map <- renderLeaflet({
-    generate_reseau_map(shapes_speeds,gares_communes)
+    if (input$reseau_radio == "Lignes à faible vitesse (< 100 km/h)"){
+      shapes_speeds_filtered <- shapes_speeds %>%
+        filter(v_max < 100)
+    }
+    else if (input$reseau_radio == "Lignes à grande vitesse (>= 100 km/h)"){
+      shapes_speeds_filtered <- shapes_speeds %>%
+        filter(v_max >= 100)
+    }
+    else {
+      shapes_speeds_filtered <- shapes_speeds
+    }
+    generate_reseau_map(shapes_speeds_filtered,gares_communes)
   })
   
   output$reseau_piechart <- renderPlot(generate_reseau_piechart(gares_communes))
