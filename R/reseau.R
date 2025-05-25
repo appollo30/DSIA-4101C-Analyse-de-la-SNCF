@@ -40,7 +40,7 @@ generate_reseau_map <- function(shapes_speeds, gares_communes) {
   # On crée la carte de base
   fig <- leaflet() %>%
     addTiles() %>%
-    setView(lng = 2.430331, lat = 46.539758, zoom = 5)
+    setView(lng = 2.430331, lat = 46.539758, zoom = 6)
   
   fig <- fig %>%
     addCircleMarkers(

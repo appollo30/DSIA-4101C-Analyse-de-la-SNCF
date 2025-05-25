@@ -27,7 +27,7 @@ ui <- fluidPage(
 
   # Affichage de la carte
   radioButtons(inputId="reseau_radio","Partie du réseau à analyser :", c("Lignes à faible vitesse (< 100 km/h)", "Lignes à grande vitesse (>= 100 km/h)", "Réseau complet"), "Lignes à grande vitesse (>= 100 km/h)"),
-  leafletOutput("reseau_map"),
+  leafletOutput("reseau_map",height=700),
 
   HTML("
         On remarque que la zone où le réseau est le plus dense est l'Île-de-France, car Paris est le hub de transport français (il n'existe pas de ligne TGV directe entre Montpellier et Marseille par exemple).<br>
